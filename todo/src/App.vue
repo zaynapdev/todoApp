@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      arr: JSON.parse(localStorage.getItem('arr')) ?? [],
+      arr: JSON.parse(localStorage.getItem('arr')) ?? [{task: "похвалить зайнап", id: 22222}],
       id: JSON.parse(localStorage.getItem('id')) ?? 0
     }
   },
