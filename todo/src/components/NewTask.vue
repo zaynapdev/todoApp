@@ -1,6 +1,6 @@
 <template>
   <form  @submit.prevent="$emit('btn', text); text=''" class="newTask">
-    <input v-model="text" type="text" placeholder="Введите текст">
+    <input class="input" v-model="text" type="text" placeholder="Введите текст">
     <button>Добавить</button>
   </form>
 </template>
@@ -27,7 +27,7 @@ export default {
   margin: auto;
   justify-content: center;
 }
-input{
+.input{
   width: 250px;
   padding: 13px;
 }
