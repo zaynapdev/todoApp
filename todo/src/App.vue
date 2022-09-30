@@ -1,7 +1,9 @@
 <template>
-<h1>Todo List</h1>
-<NewTask @btn="addTask"/>
-<Tasks :tasks="arr"/>
+  <div>
+    <h1>Todo List</h1>
+    <NewTask @btn="addTask"/>
+    <Tasks :tasks="arr"/>
+  </div>
 </template>
 
 <script>
@@ -16,13 +18,15 @@ export default {
   },
   data() {
     return {
-      arr: []
+      arr: JSON.parse(localStorage.getItem('arr')) ?? []
     }
   },
   methods: {
     addTask(task) {
       if (task != '') {
         this.arr.push(task)
+        localStorage.setItem('arr', JSON.stringify(this.arr))
+        console.log(this.arr)
       }
     }
   }
